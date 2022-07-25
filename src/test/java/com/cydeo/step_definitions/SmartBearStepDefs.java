@@ -2,6 +2,7 @@ package com.cydeo.step_definitions;
 
 import com.cydeo.pages.SmartBearLoginPage;
 import com.cydeo.pages.SmartBearOrderPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
@@ -103,19 +104,20 @@ public class SmartBearStepDefs {
         String streetAddress=faker.address().streetAddress();
         String city = faker.address().cityName();
         String state = faker.address().state();
-        String zipCode = faker.address().zipCode();
+        String zipCode = faker.numerify("#####");
         smartBearOrderPage.customerName.sendKeys(name + Keys.TAB + streetAddress + Keys.TAB + city + Keys.TAB+state+Keys.TAB+zipCode);
 
         // 3. filling payment information
         // generating data using java faker for payment info
-        String cardNum = faker.finance().creditCard();
-        String expDate = String.valueOf(faker.number().numberBetween(1-12,23-26));
+        String cardNum = faker.numerify("################");
+        String expDate = String.valueOf(faker.numerify("##/2#"));
+        //need to find better expDate faker method
 
         // choosing visa by clicking radio btn
         smartBearOrderPage.visa.click();
         smartBearOrderPage.cardNumInputBox.sendKeys(cardNum+Keys.TAB+expDate);
 
-
+        BrowserUtils.waitFor(5);
 
     }
 
