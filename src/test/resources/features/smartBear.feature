@@ -22,3 +22,8 @@ Feature:Smartbear software link verification
       When user fills the order form
       And user clicks Process button
       Then user sees a new message "New order has been successfully added."
+
+    @wip @US_101_3
+      Scenario:  Smartbear software order verification
+      Then user verifies the name "Susan McLaren" has order on date "01/05/2010"
+

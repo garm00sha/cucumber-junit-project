@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features" ,
         glue = "com/cydeo/step_definitions",
         dryRun =false,
-        tags = "@smartBearOrder and @US_101_2",
+        tags = "@US_101_3",
         publish = true
 )
 public class CukesRunner {

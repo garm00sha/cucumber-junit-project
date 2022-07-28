@@ -2,6 +2,7 @@ package com.cydeo.step_definitions;
 
 import com.cydeo.pages.SmartBearLoginPage;
 import com.cydeo.pages.SmartBearOrderPage;
+import com.cydeo.pages.SmartBearViewAllOrdersPage;
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import com.github.javafaker.Faker;
@@ -22,6 +23,8 @@ import java.util.List;
 public class SmartBearStepDefs {
     SmartBearLoginPage smartBearLoginPage=new SmartBearLoginPage();
     SmartBearOrderPage smartBearOrderPage= new SmartBearOrderPage();
+
+    SmartBearViewAllOrdersPage smartBearViewAllOrdersPage = new SmartBearViewAllOrdersPage();
     WebDriver driver = Driver.getDriver();
     Faker faker= new Faker();
     List<WebElement> allLinks;
@@ -131,5 +134,18 @@ public class SmartBearStepDefs {
         smartBearOrderPage.note_messageVerification(expMsg);
     }
 
+
+    //------------------------------------------------------------------------//
+
+
+    /**
+     * Scenario:  Smartbear software order verification
+     * Then user verifies the name "Susan McLaren" has order on date "01/05/2010"
+     */
+    @Then("user verifies the name {string} has order on date {string}")
+    public void user_verifies_the_name_has_order_on_date(String expectedName, String expectedOrderDate) {
+        Assert.assertEquals("Name verification failed", expectedName, smartBearViewAllOrdersPage.actualName.getText());
+        Assert.assertEquals("Order date verification failed", expectedOrderDate, smartBearViewAllOrdersPage.actualOrderDate.getText());
+    }
 
 }

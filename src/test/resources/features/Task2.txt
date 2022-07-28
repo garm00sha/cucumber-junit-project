@@ -14,3 +14,10 @@ http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx
 11. Generate card number using JavaFaker
 12. Click on “Process”
 13. Verify success message “New order has been successfully added.”
+
+
+
+TC#3: Smartbear software order verification
+1. Open browser and login to Smartbear software
+2. Click on View all orders
+3. Verify Susan McLaren has order on date “01/05/2010”

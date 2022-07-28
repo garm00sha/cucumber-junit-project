@@ -1,6 +1,7 @@
 package com.cydeo.pages;
 
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,9 +39,9 @@ public class SmartBearOrderPage {
     public void note_messageVerification(String expMsg) {
         Assert.assertEquals("Message verification for placing new order - FAILED!",
                 expMsg,
-                actualMsg.getText()
-        );
+                actualMsg.getText());
     }
+
 
 
 
