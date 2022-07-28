@@ -144,8 +144,11 @@ public class SmartBearStepDefs {
      */
     @Then("user verifies the name {string} has order on date {string}")
     public void user_verifies_the_name_has_order_on_date(String expectedName, String expectedOrderDate) {
-        Assert.assertEquals("Name verification failed", expectedName, smartBearViewAllOrdersPage.actualName.getText());
-        Assert.assertEquals("Order date verification failed", expectedOrderDate, smartBearViewAllOrdersPage.actualOrderDate.getText());
+        smartBearViewAllOrdersPage.getName_verification_failed(expectedName);
+        smartBearViewAllOrdersPage.getOrder_date_verification_failed(expectedOrderDate);
     }
+
+
+
 
 }
