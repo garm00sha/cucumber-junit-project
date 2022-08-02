@@ -25,4 +25,7 @@ public class SmartBearViewAllOrdersPage {
     public void getOrder_date_verification_failed(String expectedOrderDate) {
         Assert.assertEquals("Order date verification failed", expectedOrderDate, actualOrderDate.getText());
     }
+
+    @FindBy(xpath = "//table[@id='ctl00_MainContent_orderGrid']/tbody/tr[2]//td[2]")
+    public WebElement resultNameOnFirstRowFirstCell;
 }
